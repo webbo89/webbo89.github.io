@@ -1,0 +1,50 @@
+<script src='https://www.workable.com/assets/embed.js' type='text/javascript'></script>
+<script type='text/javascript' charset='utf-8'>
+
+ function keepdepartments(a) {
+
+        var listAll = document.getElementsByClassName("whr-group");
+
+  var i;
+
+  for (var i = listAll.length - 1; i >= 0; i--) {
+      listAll[i].style.display = "none"
+      listAll[i].nextElementSibling.style.display = "none"
+
+  }
+
+
+  for (var i = listAll.length - 1; i >= 0; i--) {
+
+      for (var j = a.length - 1; j >= 0; j--) {
+
+    if(listAll[i].textContent == a[j]) {
+
+        listAll[i].style.display = "inline"
+      listAll[i].nextElementSibling.style.display = "inline"
+
+    } 
+
+      }
+
+  }
+
+ }
+
+</script>
+
+<script type='text/javascript' charset='utf-8'>
+
+whr(document).ready(function(){ 
+
+whr_embed(533010, {detail: 'titles', base: 'jobs', zoom: 'country', grouping: 'departments'}); 
+
+});
+
+</script>
+
+<body onload="keepdepartments(['Engineering',])">
+
+<div class="check" id="whr_embed_hook"></div>
+
+</body>
